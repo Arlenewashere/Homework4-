@@ -1,0 +1,60 @@
+
+package test;
+
+import java.util.Scanner;
+public class Test {
+
+    
+    public static void main(String[] args) {
+        int input1, input2;
+        
+    Scanner input =new Scanner(System.in);
+     input1=input.nextInt();
+     input2=input.nextInt();
+        int y=power(input1,input2);
+        System.out.println(y);
+        input1=input.nextInt();
+     input2=input.nextInt();
+        System.out.println(gcd(input1,input2));
+        
+    }
+  
+    
+public static int power (int base, int exp){
+
+int a =base;
+
+for(int x=exp;x>1; x--){
+
+base=base*a;
+
+}
+return base;
+
+
+}
+
+public static int gcd (int num1, int num2){
+
+int g=0,z=0;
+if(num1<=num2){
+    g=num1;
+    
+}
+if(num1>num2){
+    g=num2;
+    
+}
+for(int x=1;x<g; x++){
+
+if(num1%x==0&&num2%x==0){
+z=x;
+}
+
+}
+
+return z;
+}
+
+
+}
