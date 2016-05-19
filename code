@@ -1,27 +1,67 @@
+package test;
 
-package javahomework;
+import java.util.Scanner;
+public class Test {
 
-
-
-
-public class JavaHomework {
-
+    
     public static void main(String[] args) {
-        double total=0;    
-        double a;
-        double dif=1;
-        int x;
-        for(x=1 ;x<=200000 && dif>0.00001;x+=1 ){
-            a=4d/(2*x-1);
-            if(x%2==1)total+=a;
-            else total-=a;
-            if(total>3.14159)
-                dif = total-3.14159;
-        System.out.printf("%s%n", total);
-        }
-        if(x<=200000)
-            System.out.println("term : " + x);
-
-    }
+        int base, expo, num1, num2;
         
+    Scanner input =new Scanner(System.in);
+     System.out.println("Please enter a base: ");
+     base=input.nextInt();
+      System.out.println("Please enter a power: ");
+     expo=input.nextInt();
+      System.out.println("the answer is: ");
+      System.out.println(power(base,expo));
+      
+     System.out.println("Please enter a number : ");
+     num1=input.nextInt();
+     System.out.println("Please enter a number : ");
+     num2=input.nextInt();
+    System.out.println("the GCD is: ");
+        System.out.println(gcd(num1,num2));
+        
+    }
+  
+    
+public static int power (int base, int exp){
+
+int a =base;
+
+for(int x=exp;x>1; x--){
+
+base=base*a;
+
 }
+return base;
+
+
+}
+
+public static int gcd (int num1, int num2){
+
+int g=0,z=0;
+if(num1<=num2){
+    g=num1;
+    
+}
+if(num1>num2){
+    g=num2;
+    
+}
+
+for(int x=1;x<=g; x++){
+
+if(num1%x==0&&num2%x==0){
+z=x;
+}
+
+}
+
+return z;
+}
+
+
+}
+
